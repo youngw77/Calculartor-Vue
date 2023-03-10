@@ -46,9 +46,9 @@ export default {
   data(){
     return{
       result: 0,
-      oneSet: [], // 0: num, 1: symbol, 2: num
-      twoSet: [],
-      threeSet: [],
+      oneSet: '', // 0: num, 1: symbol, 2: num
+      twoSet: '',
+      threeSet: '',
       toggleStatue: []
     }
   },
@@ -57,16 +57,18 @@ export default {
       let isSymbol = isNaN(num);
       console.log(isSymbol);
       if(isSymbol === false && this.toggleStatue[0] !== true){
-        this.oneSet.push(num);
+        this.oneSet += num;
+        this.result = this.oneSet;
       }
       if(isSymbol === true){
-        this.twoSet.push(num);
+        this.twoSet += num;
         this.toggleStatue.push(true);
         console.log(this.toggleStatue[0]);
       }
       if(isSymbol === false && this.toggleStatue[0] === true){
-        this.threeSet.push(num);
+        this.threeSet += num;
         console.log(this.toggleStatue);
+        this.result = this.threeSet;
       }
 
       // if(this.oneSet.length === 0 && isSymbol === false){
