@@ -46,7 +46,7 @@ export default {
   data(){
     return{
       result: 0,
-      oneSet: '', // 0: num, 1: symbol, 2: num
+      oneSet: '', // 1: num, 2: symbol, 3: num
       twoSet: '',
       threeSet: '',
       toggleStatue: []
@@ -70,14 +70,6 @@ export default {
         console.log(this.toggleStatue);
         this.result = this.threeSet;
       }
-
-      // if(this.oneSet.length === 0 && isSymbol === false){
-      //   this.oneSet.push(num)
-      // }else if(this.oneSet.length === 1 && isSymbol === true){
-      //   this.oneSet.push(num);
-      // }else if(this.oneSet.length === 2 && isSymbol === false){
-      //   this.oneSet.push(num);
-      // }
       console.log(this.oneSet);
       console.log(this.threeSet);
     },
@@ -99,23 +91,9 @@ export default {
         this.result = this.oneSet - this.threeSet;
         break;
       }
-      // switch(this.oneSet[1]){
-      //   case '/':
-      //   this.result = this.oneSet[0] / this.oneSet[2]
-      //   break;
-      //   case '*':
-      //   this.result = this.oneSet[0] * this.oneSet[2]
-      //   break;
-      //   case '-':
-      //   this.result = this.oneSet[0] - this.oneSet[2]
-      //   break;
-        // case '+':
-        // this.result = this.oneSet[0] + this.oneSet[2]
-        // break;
-      // }
-      this.oneSet = [];
-      this.twoSet = [];
-      this.threeSet = [];
+      this.oneSet = '';
+      this.twoSet = '';
+      this.threeSet = '';
       this.toggleStatue = [];
     }
   }
